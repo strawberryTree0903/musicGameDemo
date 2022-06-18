@@ -3,11 +3,24 @@ local scene = composer.newScene()
 -- create()
 function scene:create( event )
     local sceneGroup = self.view
-    local txt = display.newText({
-      text = "Hello world",
-      font = native.systemFont  
+    
+    local title = display.newText({
+        parent = sceneGroup,
+        text = luManager.sceneCfg[1],
+        fontSize = 200
     })
-    txt.x = HALF_W
+    uiManager.common.setXY(title, HALF_W, HALF_H - 250)
+
+    local btn = toolsManager.common.createButton({
+        parent = sceneGroup,
+        label = luManager.sceneCfg[2],
+        onlyTxt = true,
+        fontSize = 60,
+        listener = function ()
+            composer.gotoScene(sceneManager["mainScene.mainScene"])
+        end
+    })
+    uiManager.common.setXY(btn, HALF_W, HALF_H + 200)
 end
  
  

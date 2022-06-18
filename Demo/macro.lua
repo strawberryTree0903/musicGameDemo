@@ -10,3 +10,8 @@ HALF_H = SCENE_H / 2
 
 display.setStatusBar(display.HiddenStatusBar)
 composer.recycleOnSceneChange = true
+sceneManager = require("Scene.sceneManager")
+uiManager = require("UI.uiManager")
+toolsManager = require("Tools.toolsManager")
+luManager = require("Config.luManager")
+mathManager = require("Config.mathManager")
